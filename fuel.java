@@ -21,19 +21,19 @@ public class One {
 	    private JFrame mainFrame;
 	    
 	    One() {
-	        wayLabel = new JLabel("Пройденное расстояние");
+	        wayLabel = new JLabel("РџСЂРѕР№РґРµРЅРЅРѕРµ СЂР°СЃСЃС‚РѕСЏРЅРё");
 	        wayField = new JTextField("0");
 	        wayField.setHorizontalAlignment(JTextField.RIGHT);
-	        kmLabel = new JLabel("км");
-	        averageLabel = new JLabel("Количество израсходованного топлива");
+	        kmLabel = new JLabel("ГЄГ¬");
+	        averageLabel = new JLabel("ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЁГ§Г°Г Г±ГµГ®Г¤Г®ГўГ Г­Г­Г®ГЈГ® ГІГ®ГЇГ«ГЁГўГ ");
 	        averageField = new JTextField("0");
 	        averageField.setHorizontalAlignment(JTextField.RIGHT);
-	        litersLabel = new JLabel("л.");
-	        priceLabel = new JLabel("Цена за литр горючего");
+	        litersLabel = new JLabel("Г«.");
+	        priceLabel = new JLabel("Г–ГҐГ­Г  Г§Г  Г«ГЁГІГ° ГЈГ®Г°ГѕГ·ГҐГЈГ®");
 	        priceField = new JTextField("0");
 	        priceField.setHorizontalAlignment(JTextField.RIGHT);
-	        rurLabel = new JLabel("Руб.");
-	        calcButton = new JButton("Рассчитать");
+	        rurLabel = new JLabel("ГђГіГЎ.");
+	        calcButton = new JButton("ГђГ Г±Г±Г·ГЁГІГ ГІГј");
 	        calcButton.addActionListener(new ActionListener() {
 	            @Override
 	            public void actionPerformed(ActionEvent ae) {
@@ -44,14 +44,14 @@ public class One {
 	                    double fuel = (average / way) * 100.0;
 	                    double cost = fuel * price;
 	                    double one = fuel * average;
-	                    resultLabel.setText("<html>Расход топлива <font style='color: red; font-weight: bold;'>" + fuel + "</font> /100 км, обойдётся в <font style='color: red; font-weight: bold;'>" + cost + "</font> рублей.</html>");
+	                    resultLabel.setText("<html>ГђГ Г±ГµГ®Г¤ ГІГ®ГЇГ«ГЁГўГ  <font style='color: red; font-weight: bold;'>" + fuel + "</font> /100 ГЄГ¬, Г®ГЎГ®Г©Г¤ВёГІГ±Гї Гў <font style='color: red; font-weight: bold;'>" + cost + "</font> Г°ГіГЎГ«ГҐГ©.</html>");
 	                }
 	                catch ( NumberFormatException nfe ) {
-	                    resultLabel.setText("Проверьте введённые данные");
+	                    resultLabel.setText("ГЏГ°Г®ГўГҐГ°ГјГІГҐ ГўГўГҐГ¤ВёГ­Г­Г»ГҐ Г¤Г Г­Г­Г»ГҐ");
 	                }
 	            }
 	        });
-	        resultLabel = new JLabel("Введите данные для рассчёта");
+	        resultLabel = new JLabel("Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г Г­Г­Г»ГҐ Г¤Г«Гї Г°Г Г±Г±Г·ВёГІГ ");
 	        
 	        GridBagLayout layout = new GridBagLayout();
 	        GridBagConstraints constraints = new GridBagConstraints();
@@ -99,7 +99,7 @@ public class One {
 	        constraints.anchor = GridBagConstraints.WEST;
 	        layout.setConstraints(resultLabel, constraints);
 	        
-	        mainFrame = new JFrame("Расход топлива");
+	        mainFrame = new JFrame("ГђГ Г±ГµГ®Г¤ ГІГ®ГЇГ«ГЁГўГ ");
 	        mainFrame.setSize(600, 450);
 	        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        mainFrame.setLayout(layout);
